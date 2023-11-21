@@ -16,7 +16,7 @@
 - Desmarcar tarefa
 
 # 👀 Exemplo de listagem 
-<img src="![ToDo-vazio](https://github.com/clesarjr/desafio-ToDo-react-ts/assets/53583192/553627aa-5b97-4ff9-bacb-1cc48eff143d)"/>
+<img src="https://github.com/clesarjr/desafio-ToDo-react-ts/assets/53583192/553627aa-5b97-4ff9-bacb-1cc48eff143d"/>
 
 
 
