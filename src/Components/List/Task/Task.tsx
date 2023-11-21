@@ -4,9 +4,15 @@ import { FaRegTrashAlt } from "react-icons/fa"
 
 interface TaskProps {
     task: ITask
+    onDeleteTask: (id: number) => void
 }
 
-export function Task({ task }: TaskProps) {
+export function Task({ task, onDeleteTask }: TaskProps) {
+
+    function deleteTask() {
+        onDeleteTask(task.id)
+    }
+
     return (
         <div className={styles.task}>
             <div className={styles.content}>
@@ -15,7 +21,7 @@ export function Task({ task }: TaskProps) {
                     {task.content}
                 </p>
             </div>
-            <FaRegTrashAlt />
+            <FaRegTrashAlt onClick={deleteTask} title='Excluir tarefa' />
         </div>
     )
 }

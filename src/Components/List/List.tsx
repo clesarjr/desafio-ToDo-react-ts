@@ -29,6 +29,14 @@ export function List() {
         setTask('')
     }
 
+    function deleteTask(idTask: number) {
+        const updatedTasksList = tasks.filter(task => { 
+            return task.id !== idTask
+        })
+
+        setTasks(updatedTasksList)
+    }
+
     const countTasks = tasks.length
 
     return (
@@ -44,6 +52,7 @@ export function List() {
                 />
                 <button 
                     type='submit'
+                    title='Adicionar tarefa'
                     className={styles.button}
                     onClick={addTask}
                     disabled={task.length === 0}
@@ -76,7 +85,8 @@ export function List() {
                         return (
                             <Task 
                                 key={task.id}
-                                task={task} 
+                                task={task}
+                                onDeleteTask={deleteTask}
                             />
                         )
                     })
