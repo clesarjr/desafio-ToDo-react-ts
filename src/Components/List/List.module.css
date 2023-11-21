@@ -28,6 +28,11 @@
     cursor: pointer;
 }
 
+.button:disabled {
+    opacity: 80%;
+    cursor: not-allowed;
+}
+
 .header {
     width: 100%;
     margin-top: 4rem;
