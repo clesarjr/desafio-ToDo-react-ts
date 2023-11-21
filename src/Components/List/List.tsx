@@ -30,14 +30,28 @@ export function List() {
     }
 
     function deleteTask(idTask: number) {
-        const updatedTasksList = tasks.filter(task => { 
+        const updatedTasks = tasks.filter(task => { 
             return task.id !== idTask
         })
 
-        setTasks(updatedTasksList)
+        setTasks(updatedTasks)
     }
 
-    const countTasks = tasks.length
+    function checkTask(task: ITask) {
+        const updatedTasks = tasks.map((item) => {
+            if (item.id === task.id) {
+              return { ...item, checked: task.checked }
+            }
+      
+            return { ...item }
+        })
+      
+        setTasks(updatedTasks)
+    }
+
+    const countCompletedTasks = tasks.filter(task => {
+        return task.checked
+    })
 
     return (
         <>
@@ -67,7 +81,7 @@ export function List() {
                         Tarefas criadas
                     </span>
                     <div className={styles.countTasks}>
-                        {countTasks}
+                        {tasks.length}
                     </div>
                 </div>
                 <div className={styles.contentTasks}>
@@ -75,7 +89,11 @@ export function List() {
                         Concluídas
                     </span>
                     <div className={styles.countTasks}>
-                        0
+                        {countCompletedTasks.length > 0 ? (
+                            countCompletedTasks.length + ' de ' + tasks.length
+                        ) : (
+                            countCompletedTasks.length
+                        )}
                     </div>
                 </div>
             </div>
@@ -87,6 +105,7 @@ export function List() {
                                 key={task.id}
                                 task={task}
                                 onDeleteTask={deleteTask}
+                                onCheckTask={checkTask}
                             />
                         )
                     })
