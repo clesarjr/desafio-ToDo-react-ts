@@ -15,8 +15,11 @@
 - Marcar como concluída
 - Desmarcar tarefa
 
-# 👀 Exemplo de listagem 
-<img src="https://github.com/clesarjr/desafio-ToDo-react-ts/assets/53583192/553627aa-5b97-4ff9-bacb-1cc48eff143d"/>
+# Apresentação da tela com tarefas adicionadas
+<img src="https://github.com/clesarjr/desafio-ToDo-react-ts/assets/53583192/eb87138b-6e45-4fc7-af16-331c5f5537a3"/>
+
+# Apresentação da tela sem tarefas 
+<img src="https://github.com/clesarjr/desafio-ToDo-react-ts/assets/53583192/e6f1ed7f-8456-408b-a765-93e956572f90"/>
 
 
 
